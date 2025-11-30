@@ -1,0 +1,56 @@
+.help-page {
+  display: grid;
+  gap: var(--space-xl);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.help-intro {
+  display: grid;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  padding: var(--space-xl);
+  border: 1px solid rgba(58, 46, 122, 0.12);
+  box-shadow: 0 18px 40px rgba(42, 31, 28, 0.08);
+}
+
+.help-section {
+  display: grid;
+  gap: var(--space-md);
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  padding: var(--space-lg);
+  border: 1px solid rgba(58, 46, 122, 0.08);
+}
+
+.help-list {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.help-entry {
+  display: grid;
+  gap: 6px;
+  padding: var(--space-md);
+  border-radius: 16px;
+  background: rgba(247, 233, 222, 0.28);
+  border: 1px solid rgba(58, 46, 122, 0.12);
+}
+
+.help-entry strong {
+  font-size: 1.05rem;
+  color: var(--color-deep-lavender);
+}
+
+.help-entry span {
+  color: var(--color-charcoal);
+}
+
+.help-entry a {
+  color: var(--color-soft-blue);
+  text-decoration: underline;
+}

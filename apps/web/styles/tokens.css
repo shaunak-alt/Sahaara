@@ -1,0 +1,43 @@
+:root {
+  /* Core palette */
+  --color-cream: #f7e9de;
+  --color-warm-pink: #d78174;
+  --color-blush: #f5c8b8;
+  --color-deep-lavender: #3a2e7a;
+  --color-sunset-orange: #d68b46;
+  --color-soft-brown: #2a1f1c;
+  --color-soft-skin: #f2b9a1;
+  --color-muted-red: #e58b8b;
+
+  /* Legacy aliases maintained for existing styles */
+  --color-soft-blue: var(--color-warm-pink);
+  --color-pale-blue: var(--color-blush);
+  --color-sage-green: var(--color-soft-skin);
+  --color-earth-beige: #f4d9c8;
+  --color-clay-brown: var(--color-sunset-orange);
+  --color-soft-coral: #f3b09b;
+  --color-warm-red: var(--color-muted-red);
+  --color-off-white: var(--color-cream);
+  --color-charcoal: var(--color-soft-brown);
+  --color-warm-grey: #816a64;
+
+  --font-sans: "Inter", "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius-base: 12px;
+  --radius-card: 20px;
+  --shadow-soft: 0 12px 30px rgba(42, 31, 28, 0.12);
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  --motion-default: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-default: linear;
+  }
+}

@@ -1,0 +1,308 @@
+.lockerRoot {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.lockedState {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.lockedCard {
+  display: grid;
+  gap: var(--space-lg);
+  justify-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 28px;
+  padding: var(--space-xl);
+  box-shadow: 0 28px 60px rgba(58, 46, 122, 0.08);
+  border: 1px solid rgba(58, 46, 122, 0.12);
+  max-width: 420px;
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background: rgba(247, 233, 222, 0.8);
+  color: var(--color-deep-lavender);
+}
+
+.lockedHeadline {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--color-deep-lavender);
+}
+
+.lockedCopy {
+  margin: 0;
+  color: var(--color-warm-grey);
+  line-height: 1.6;
+}
+
+.lockedForm {
+  width: 100%;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.lockedInput {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(58, 46, 122, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.unlockButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  background: var(--color-warm-pink);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 160ms var(--motion-default), box-shadow 160ms var(--motion-default);
+}
+
+.unlockButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.unlockButton:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 32px rgba(215, 129, 116, 0.32);
+}
+
+.vaultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vaultHeaderActions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.vaultTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.2rem;
+  color: var(--color-deep-lavender);
+  margin: 0;
+}
+
+.lockLink {
+  font-size: 0.85rem;
+  color: var(--color-warm-grey);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.downloadAllButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(247, 233, 222, 0.6);
+  color: var(--color-deep-lavender);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.downloadAllButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.newNoteCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: var(--space-lg);
+  border: 1px solid rgba(58, 46, 122, 0.12);
+  box-shadow: 0 12px 30px rgba(42, 31, 28, 0.08);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.noteTextarea {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 18px;
+  border: 1px solid rgba(58, 46, 122, 0.12);
+  padding: 14px;
+  resize: vertical;
+  background: rgba(247, 233, 222, 0.32);
+}
+
+.noteActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.uploadCard {
+  gap: var(--space-md);
+}
+
+.uploadCopy {
+  margin: 0;
+  color: var(--color-charcoal);
+}
+
+.uploadLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1px dashed rgba(58, 46, 122, 0.35);
+  background: rgba(247, 233, 222, 0.32);
+  color: var(--color-deep-lavender);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.uploadInput {
+  display: none;
+}
+
+.uploadHint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-warm-grey);
+}
+
+.saveButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: none;
+  background: var(--color-warm-pink);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.itemsList {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.emptyState {
+  text-align: center;
+  color: var(--color-warm-grey);
+  padding: var(--space-lg) 0;
+}
+
+.itemCard {
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 4px solid rgba(58, 46, 122, 0.2);
+  border-radius: 18px;
+  padding: var(--space-md);
+  box-shadow: 0 14px 32px rgba(42, 31, 28, 0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.itemMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.itemIcon {
+  color: var(--color-deep-lavender);
+}
+
+.itemTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+}
+
+.itemDate {
+  font-size: 0.75rem;
+  color: var(--color-warm-grey);
+}
+
+.itemContent {
+  margin: 0;
+  color: var(--color-charcoal);
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.fileDetails {
+  display: grid;
+  gap: 2px;
+  color: var(--color-charcoal);
+  font-size: 0.9rem;
+}
+
+.fileName {
+  font-weight: 600;
+}
+
+.fileMeta {
+  font-size: 0.8rem;
+  color: var(--color-warm-grey);
+}
+
+.itemActions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  color: var(--color-warm-red);
+}
+
+.feedback {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-warm-red);
+  text-align: center;
+}

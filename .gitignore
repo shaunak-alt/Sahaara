@@ -1,0 +1,34 @@
+# PNPM
+node_modules/
+pnpm-lock.yaml
+
+# Virtual environments
+.venv/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+.next/
+dist/
+.eslintcache
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Env
+.env*
+!.env.example
+*.env.local
+
+# Coverage and temp artifacts
+coverage/
+*.log

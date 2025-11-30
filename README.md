@@ -1,29 +1,60 @@
 # Sahaara
 
-Sahaara is a discreet, trauma-informed support platform for domestic-violence survivors. The monorepo uses PNPM workspaces with a Next.js frontend (`apps/web`), a NestJS backend (`apps/api`), and shared packages for UI, utilities, and safety policies.
+Sahaara is a trauma-informed companion for survivors who need discreet emotional support, legal clarity, and a safe place to store evidence. The project lives in a PNPM monorepo with a Next.js web client (`apps/web`), a NestJS API (`apps/api`), and shared packages for copy, utilities, and UI tokens.
 
-## Getting Started
+## ✨ Highlights
 
-```bash
-pnpm install
-pnpm dev:web
-pnpm dev:api
+- **Supportive chat** that auto-redacts personal details, supports Hindi/Marathi/English, and can hand off to the legal helper when it hears legal keywords.
+- **Quick exit workflow** that wipes session storage, rewrites browser history, and redirects to a safe site with one click or a double-tap of Escape.
+- **Encrypted evidence locker** built on PBKDF2 + AES-GCM so notes/files stay on-device unless the survivor exports them.
+- **Legal helper** powered by retrieval-augmented content with deterministic fallbacks and a “not legal advice” banner.
+
+## 🧱 Project Structure
+
+```
+apps/
+  web/    # Next.js App Router frontend
+  api/    # NestJS REST API
+packages/
+  config/ # Legal copy + tokens
+  ui/     # Shared UI primitives
+  utils/  # Sanitizers, alias generator
 ```
 
-> ⚠️ Sensitive data must remain client-side. Do not connect storage services until local encryption is in place.
+## 🚀 Getting Started
 
-## Packages
-- `@sahaara/ui` — shared design system components (muted palette, rounded corners).
-- `@sahaara/utils` — sanitizers, encryption helpers, alias generator.
-- `@sahaara/config` — design tokens, copy blocks, safety policies.
+```powershell
+pnpm install
+pnpm dev:api   # http://localhost:4000
+pnpm dev:web   # http://localhost:3000
+```
 
-## Scripts
-- `pnpm dev:web` — runs Next.js dev server.
-- `pnpm dev:api` — starts NestJS in watch mode.
-- `pnpm build` — builds all workspaces.
+Copy `.env.example` to `.env` (or `.env.local`) and fill values such as `NEXT_PUBLIC_API_BASE_URL`, `GROQ_API_KEY`, and `GOOGLE_API_KEY`.
 
-## Safety Guardrails
-- Quick Exit visible on every page.
-- AI chat limited to emotional support; no legal advice or risk predictions.
-- Legal info is scripted content reviewed by admins.
-- Evidence and trusted contacts stay encrypted on the client (IndexedDB + AES-GCM).
+## 🧰 Useful Scripts
+
+- `pnpm dev:web` – run the Next.js dev server
+- `pnpm dev:api` – run the NestJS API in watch mode
+- `pnpm build` – build all workspaces
+- `pnpm lint` – lint via the shared ESLint config
+
+## 🔒 Safety Guardrails
+
+- Quick Exit button + keyboard shortcut present globally
+- Evidence locker encrypts with AES-GCM using PBKDF2-derived keys
+- Legal helper keeps responses deterministic when AI is unavailable and always adds disclaimers
+- Chat transcripts store locally with sensitive details redacted before hitting the API
+
+## 🧭 Key Files
+
+- `apps/web/components/support/ChatPreview.tsx` – chat experience
+- `apps/web/components/locker/EvidenceLocker.tsx` – encrypted locker UI
+- `apps/web/lib/safety/useQuickExit.ts` – panic-flow orchestration
+- `apps/web/lib/legal-rag.ts` – retrieval + fallback logic for legal helper
+- `apps/api/src/chat/chat.service.ts` – AI orchestration and translation
+
+## 🤝 Contributing
+
+1. Fork the repo and branch off `main`.
+2. Run `pnpm lint` and (when added) tests before committing.
+3. Submit a pull request with context and manual-verification notes.
